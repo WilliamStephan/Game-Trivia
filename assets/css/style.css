@@ -1,0 +1,133 @@
+html {  
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    background-color: lightcoral;
+}
+
+body {  
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 40rem;
+}
+
+.main-container {  
+    padding: 0rem;
+    background-color: lightgreen;
+    text-align: center;
+}
+
+#title {
+    max-width: 40rem;
+    height: 5rem;
+    padding-top: 1rem;
+    text-align: center;
+    border: black;
+    border-style: solid;
+    border-width: 1px;
+    background-color: #666666;
+    color: white;
+}
+
+#rules {
+    background-color: lightgray;
+    float: left;
+    border: black;
+    border-style: solid;
+    border-width: 1px;
+    padding: 0.5rem 1rem 0rem 1rem;
+}
+
+#status {
+    background-color: cornsilk;
+    display: flex;
+    max-width: 40rem;
+    width: 100%;
+    height: 8rem;
+    border: black;
+    border-style: solid;
+    border-width: 1px;
+}
+
+#goal {
+    padding-top: 0.5rem;
+    background-color: lightskyblue;
+    text-align: center;
+    max-width: 20rem;
+    width: 100%;
+    height: 8rem;
+    float: left;
+}
+
+#winStat {
+    padding-top: 0.5rem;
+    text-align: center;
+}
+
+#winText {
+    padding: 0.5rem 1rem;
+    line-height: 0.8rem;
+    font-size: 120%;
+    
+}
+
+#wins {
+    background-color: #666666;
+    max-width: 20rem;
+    width: 100%;
+    height: 8rem;
+    float: left;
+    color: white;
+}
+
+#crystals {
+    max-width: 40rem;
+    height: auto;
+    display: flex;   
+}
+
+.gem {
+    max-width: 10rem;
+    width: 100%;
+    height: 10rem;
+    float: left;
+    border: black;
+    border-style: solid;
+    border-width: 1px;
+}
+
+#pink {
+    background: url(../images/pink.jpg) center no-repeat;
+    background-size: contain;
+    display: flex;
+}
+
+#yellow {
+    background: url(../images/yellow.jpg) center no-repeat;
+    background-size: contain;
+    display: flex;
+}
+
+#blue {
+    background: url(../images/blue.jpg) center no-repeat;
+    background-size: contain;
+    display: flex;
+}
+
+#green {
+    background: url(../images/green.jpg) center no-repeat;
+    background-size: contain;
+    display: flex;
+}
+
+#score {
+    padding-top: 1rem;
+    background-color: cornflowerblue;;
+    text-align: center;
+    max-width: 40rem;
+    width: 100%;
+    height: 5rem;
+    border: black;
+    border-style: solid;
+    border-width: 1px;
+    color: white;
+}

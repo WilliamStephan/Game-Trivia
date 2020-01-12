@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Reset CSS -->
+    <link rel="stylesheet" type="text/css" href="./assets/css/reset-min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+        integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+    <!-- Custom css-->
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+
+    <title>Trivia Game</title>
+</head>
+
+<body>
+    <div class="container-fluid main-container">
+        <h1>TRIVIA GAME</h1>
+
+        <div class="card text-center">
+            <div class="card-body">
+                <div id="content">
+                    <h5 id="question" class="card-title">Question will go in this spot so I need to add some length!</h5>
+
+                    <div id="answers" class="list-group"></div>
+
+                </div>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+            <div class="card-footer text-muted">
+
+                <div class="col-md-12 text-center">
+                    <progress value="10" max="10" id="pageBeginCountdown"></progress>
+                    <p> Begining in <span id="pageBeginCountdownText">10 </span> seconds</p>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="row begin-countdown">
+
+        </div>
+
+    </div>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+
+    <!-- Custom JavaScript -->
+    <script src="assets/javascript/obj-func.js"></script>
+    <script src="assets/javascript/game.js"></script>
+
+
+</body>
+
+</html>
