@@ -1,7 +1,17 @@
 console.log("asset/javascript/game.js linked");
+
+const myTimer = countDown;
+
+
+
+
+var correct = 0;
+var incorrect = 0;
+
 var cnt = 0
 var mix;
-var q = "";
+var timeleft;
+
 var trivArray = [
     ["Who was the first president to be inaugurated in Washington D.C.?", "Thomas Jefferson", "John Adams", "George Washington", "Donald Trump"],
     ["When scientists first saw specimens of this Australian mammal, they thought it was a hoax.", "Platypus", "Kangaroo", "Echidna", "Paul Hogan"],
@@ -12,25 +22,58 @@ var trivArray = [
 
 console.log(trivArray);
 
+document.body.onclick = keyClick;
 
 
+function keyClick(e) { // looking for clicks  - wheel or on-screen keyboard
+    e = window.event ? event.srcElement : e.target;
 
+    if (e.classList.contains('start')) { // start clicked
+        console.log("click event: " + e.getAttribute('id') + " was clicked")
+        $("#btn-start").css("display", "none");
+        $("#btn-start").html("New Game"); // sets new game button after start
+        gameLoop();
+    }
 
+    if (e.classList.contains('list-group-item')) { // answer clicked
+        if (trivArray[cnt][1] === e.textContent) {
+            displayRight();
+            correct++;
+        } else {
+            displayWrong();
+            incorrect++;
+        }
+        cnt++;
+    }
+}
 
-//setTimeout(function () {
-    startTimer();
-//}, 11000);
+function restart() {
+    $("#answers").empty();
+    $("#question").empty();
+    $("#timer-div").empty();
+    $("#btn-start").css("display", "inline-block");
+    $("#answers").append('<p>There were ' + (trivArray.length) + ' questions</p>');
+    $("#answers").append('<p>And you got: ' + correct + ' right, for a ratio of: ' + ((correct / (trivArray.length))) * 100 + '%</p>');
+    cnt = 0;
+    correct = 0;
+    incorrect = 0;
+}
 
-
-
-
-
-
-
-function startTimer() {
-    cnt++;
+function gameLoop() {
     if (cnt < trivArray.length) {
-        ProgressCountdown(10, 'pageBeginCountdown', 'pageBeginCountdownText').then(value => startTimer());
+        $("#timer-div").empty();
+        $("#timer-div").append('<progress value="10" max="10" id="pBar"></progress>');
+        $("#timer-div").append('<p> Time Left: <span id="pText">10 </span> seconds</p>');
+        const myTimer = countDown(); 
+        round();
+    } else {
+        clearInterval(myTimer); 
+        restart();
+    }
+}
+
+function round() {    
+    if (cnt < trivArray.length) {
         $("#answers").empty();
         $("#question").html(trivArray[cnt][0]);
         mix = randomIndex(trivArray.length - 1);
@@ -42,4 +85,79 @@ function startTimer() {
             $("#answers").append(a);
         }
     }
+}
+
+function displayRight() {
+    $("#timer-div").empty();
+    $("#answers").empty();
+    $("#answers").append('<p>Nice Job! ' + (trivArray[cnt][1]) + ' is the correct!</p>');
+    setTimeout(function() {
+        gameLoop();
+    }, 1000);
+}
+
+function displayWrong() {
+    $("#timer-div").empty();
+    $("#answers").empty();
+    $("#answers").append('<p>Nope! Nice try, the correct answer is: ' + (trivArray[cnt][1]) + '</p>');
+    setTimeout(function() {
+        gameLoop();
+    }, 1000);
+}
+
+// function interval() {
+//     setInterval(function() {
+//         displayWrong();
+//         cnt++;
+//     }, 5000);
+// }
+
+
+
+function countDown() {
+    var timeleft = 10;
+    var myTimer = setInterval(function () {
+        document.getElementById("pBar").value = (timeleft - 1);
+        --timeleft;
+        document.getElementById("pText").textContent = timeleft;
+        if (timeleft <= 0) {
+            clearInterval(myTimer); 
+            displayWrong(); 
+            cnt++
+        }
+    }, 1000);
+}
+
+
+
+// function countDown() {
+//     var timeleft = 10;
+//     var myTimer = setInterval(function () {
+//         document.getElementById("pBar").value = (timeleft - 1);
+//         --timeleft;
+//         document.getElementById("pText").textContent = timeleft;
+//         if (timeleft <= 0) {
+//             displayWrong(); 
+//         }
+//     }, 1000);
+// }
+
+
+
+
+
+
+
+
+function roundConfirm() {
+    setTimeout(function() {
+        var nxtRound = confirm( "Continue to the next round?" );
+        if ( nxtRound ) {
+            gallowsReset();
+            newRound();
+        } else {
+            rotateWheel("0", false)
+            start() 
+        } 
+    }, 3000);
 }

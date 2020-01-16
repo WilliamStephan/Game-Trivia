@@ -1,24 +1,5 @@
 console.log("asset/javascript/obj-func.js linked");
 
-
-
-function ProgressCountdown(timeleft, bar, text) {
-    return new Promise((resolve, reject) => {
-        var countdownTimer = setInterval(() => {
-            timeleft--;
-
-            document.getElementById(bar).value = timeleft;
-            document.getElementById(text).textContent = timeleft;
-
-            if (timeleft <= 0) {
-                clearInterval(countdownTimer);
-                resolve(true);
-            }
-        }, 1000);
-    });
-}
-
-
 // will randomize [0 to x] positive int sequence, returns array (length.x+1) 
 // used for randomizing questions and answer positions 
 function randomIndex(arrLength) {
