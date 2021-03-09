@@ -1,10 +1,9 @@
 # Trivia Game
+Application link: [Trivia Game](https://williamstephan.github.io/TriviaGame/)
 
 Homework for full stack development bootcamp UT-Austin (UT-VIRT-FSF-PT-11-2019-U-LOL)
 
 Limited time to create game so UI is very plain, but chose advanced assignment
-
-Game link: [Trivia Game](https://williamstephan.github.io/TriviaGame/)
 
 ## Specifications
 
