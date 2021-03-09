@@ -1,4 +1,4 @@
-# Trivia Game (simple JavaScript game)
+# Trivia Game
 Application link: [Trivia Game](https://williamstephan.github.io/TriviaGame/)
 
 Homework for full stack development bootcamp UT-Austin (UT-VIRT-FSF-PT-11-2019-U-LOL)
